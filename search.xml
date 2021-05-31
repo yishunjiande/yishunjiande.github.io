@@ -142,6 +142,7 @@
 <li>解三方库源码问题，能更好的定位、解决问题</li>
 </ul>
 <p>阅读本文，你将学会如何分析字节码内容。</p>
+<span id="more"></span>
 <h2 id="1-基础认识"><a href="#1-基础认识" class="headerlink" title="1. 基础认识"></a>1. 基础认识</h2><p>字节码技术是Java虚拟机实现<strong>平台无关性</strong>和<strong>语言无关性</strong>的关键。这句话有两层含义：</p>
 <ul>
 <li>java语言，“一处编译，处处运行”，说的就是Java虚拟机的平台无关性，Java虚拟机实现了不同平台的兼容，Java虚拟机只需加载符合《Java虚拟机规范》的字节码即可。</li>
