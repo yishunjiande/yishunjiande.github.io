@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>个人博客搭建（Mac+Hexo+github）</title>
+    <title>Mac上使用Hexo+github搭建个人博客</title>
     <url>/2018/12/16/hello_my_blog/</url>
     <content><![CDATA[<p>通过google查问题的时候，看到一些博客风格很简约，博客内容质量很好，不由觉得想要拥有，得知这样的博客都是通过hexo+github搭建的，都是开源免费的，那必须得自己搞一个了，话不多说，开搞！</p>
 <span id="more"></span>
