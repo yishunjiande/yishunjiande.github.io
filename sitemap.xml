@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://kt-learn.cn/2020/05/31/%E8%99%9A%E6%8B%9F%E6%9C%BA-Java%E5%AD%97%E8%8A%82%E7%A0%81%E6%96%87%E4%BB%B6/</loc>
+    
+    <lastmod>2021-05-31</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://kt-learn.cn/about/index.html</loc>
     
     <lastmod>2021-05-29</lastmod>
@@ -59,10 +66,38 @@
     <priority>0.6</priority>
   </url>
   
+  <url>
+    <loc>https://kt-learn.cn/tags/java/</loc>
+    <lastmod>2021-05-31</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kt-learn.cn/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/</loc>
+    <lastmod>2021-05-31</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kt-learn.cn/tags/%E5%AD%97%E8%8A%82%E7%A0%81/</loc>
+    <lastmod>2021-05-31</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
 
   
   <url>
     <loc>https://kt-learn.cn/categories/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</loc>
+    <lastmod>2021-05-31</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kt-learn.cn/categories/%E8%99%9A%E6%8B%9F%E6%9C%BA%EF%BC%8C%E5%AD%97%E8%8A%82%E7%A0%81/</loc>
     <lastmod>2021-05-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
