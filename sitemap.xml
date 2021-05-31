@@ -97,7 +97,14 @@
   </url>
   
   <url>
-    <loc>https://kt-learn.cn/categories/%E8%99%9A%E6%8B%9F%E6%9C%BA%EF%BC%8C%E5%AD%97%E8%8A%82%E7%A0%81/</loc>
+    <loc>https://kt-learn.cn/categories/%E8%99%9A%E6%8B%9F%E6%9C%BA/</loc>
+    <lastmod>2021-05-31</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kt-learn.cn/categories/%E8%99%9A%E6%8B%9F%E6%9C%BA/%E5%AD%97%E8%8A%82%E7%A0%81/</loc>
     <lastmod>2021-05-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
