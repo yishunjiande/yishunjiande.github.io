@@ -1,6 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>详解Java字节码文件</title>
+    <url>/2020/05/31/JVM-bytecode-analysis/</url>
+    <content><![CDATA[<p>引用两句话来说明字节码文件的重要性：</p>
+<blockquote>
+<p>代码编译的结果从本地机器码转变为字节码，是存储格式发展的一小步，却是编程语言发展的一大步。来自《深入理解Java虚拟机》-周志明  </p>
+</blockquote>
+<blockquote>
+<p>理解字节码以及理解Java编译器如何生成Java字节码与学习汇编知识对于C/C++程序员有一样的意义。来自IBM developerWorks周刊</p>
+</blockquote>
+<p>本人在学习字节码文件后，明显能感觉到的几个好处：</p>
+<ul>
+<li>可以更好的理解Java语言特性</li>
+<li>对以后学习Javassist、ASM等字节码操作工具有很大帮助</li>
+<li>解三方库源码问题，能更好的定位、解决问题</li>
+</ul>
+<p>阅读本文，你将学会如何分析字节码内容。</p>
+<span id="more"></span>
+<h2 id="1-基础认识"><a href="#1-基础认识" class="headerlink" title="1. 基础认识"></a>1. 基础认识</h2><p>字节码技术是Java虚拟机实现<strong>平台无关性</strong>和<strong>语言无关性</strong>的关键。这句话有两层含义：</p>
+<ul>
+<li>java语言，“一处编译，处处运行”，说的就是Java虚拟机的平台无关性，Java虚拟机实现了不同平台的兼容，Java虚拟机只需加载符合《Java虚拟机规范》的字节码即可。</li>
+<li>因为虚拟机只与字节码“打交道”，所以源码存在的形式不一定是Java语言，因此诞生了Groovy语言、JRuby语言等，它们通过编译器生成字节码，供Java虚拟机使用。</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/yishunjiande/PictureContainer@main/img/20210531233725.png" alt="语言无关性"></p>
+<h2 id="2-字节码文件结构"><a href="#2-字节码文件结构" class="headerlink" title="2 字节码文件结构"></a>2 字节码文件结构</h2><p>首先我们来统一术语，通常说的“字节码文件”、“.class文件”、“class文件”都是指的字节码文件，本文将统一使用字节码文件描述。</p>
+<p>注意：字节码的载体不一定非得是磁盘文件，也可以是来源于网络</p>
+]]></content>
+      <categories>
+        <category>Java虚拟机</category>
+        <category>字节码</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+        <tag>JVM</tag>
+        <tag>字节码</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Gradle自定义插件的三种方式</title>
     <url>/2021/06/03/Android-gradle-customPlugin/</url>
     <content><![CDATA[<p>gradle是一种构建工具，用来控制代码的编译、构建、打包等过程，自定义Gradle在Android中应用是很广泛的，比如在gradle构建过程中使用字节码技术、默认的Android项目中应用了很多插件，比如java、groovy、com.android.application等，了解Gradle插件有助于更好的理解生成APK的过程。</p>
@@ -75,43 +112,6 @@
         <tag>gradle</tag>
         <tag>Android</tag>
         <tag>groovy</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>详解Java字节码文件</title>
-    <url>/2020/05/31/JVM-bytecode-analysis/</url>
-    <content><![CDATA[<p>引用两句话来说明字节码文件的重要性：</p>
-<blockquote>
-<p>代码编译的结果从本地机器码转变为字节码，是存储格式发展的一小步，却是编程语言发展的一大步。来自《深入理解Java虚拟机》-周志明  </p>
-</blockquote>
-<blockquote>
-<p>理解字节码以及理解Java编译器如何生成Java字节码与学习汇编知识对于C/C++程序员有一样的意义。来自IBM developerWorks周刊</p>
-</blockquote>
-<p>本人在学习字节码文件后，明显能感觉到的几个好处：</p>
-<ul>
-<li>可以更好的理解Java语言特性</li>
-<li>对以后学习Javassist、ASM等字节码操作工具有很大帮助</li>
-<li>解三方库源码问题，能更好的定位、解决问题</li>
-</ul>
-<p>阅读本文，你将学会如何分析字节码内容。</p>
-<span id="more"></span>
-<h2 id="1-基础认识"><a href="#1-基础认识" class="headerlink" title="1. 基础认识"></a>1. 基础认识</h2><p>字节码技术是Java虚拟机实现<strong>平台无关性</strong>和<strong>语言无关性</strong>的关键。这句话有两层含义：</p>
-<ul>
-<li>java语言，“一处编译，处处运行”，说的就是Java虚拟机的平台无关性，Java虚拟机实现了不同平台的兼容，Java虚拟机只需加载符合《Java虚拟机规范》的字节码即可。</li>
-<li>因为虚拟机只与字节码“打交道”，所以源码存在的形式不一定是Java语言，因此诞生了Groovy语言、JRuby语言等，它们通过编译器生成字节码，供Java虚拟机使用。</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/yishunjiande/PictureContainer@main/img/20210531233725.png" alt="语言无关性"></p>
-<h2 id="2-字节码文件结构"><a href="#2-字节码文件结构" class="headerlink" title="2 字节码文件结构"></a>2 字节码文件结构</h2><p>首先我们来统一术语，通常说的“字节码文件”、“.class文件”、“class文件”都是指的字节码文件，本文将统一使用字节码文件描述。</p>
-<p>注意：字节码的载体不一定非得是磁盘文件，也可以是来源于网络</p>
-]]></content>
-      <categories>
-        <category>Java虚拟机</category>
-        <category>字节码</category>
-      </categories>
-      <tags>
-        <tag>java</tag>
-        <tag>JVM</tag>
-        <tag>字节码</tag>
       </tags>
   </entry>
   <entry>
