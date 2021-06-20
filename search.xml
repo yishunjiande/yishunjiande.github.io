@@ -81,6 +81,7 @@
     <title>Android Gradle（一）Gradle的Android插件入门</title>
     <url>/2021/06/20/Android-gradle-start-1/</url>
     <content><![CDATA[<p>新建一个Android项目，默认使用Gradle进行构建，相信大家或多或少都听过Gradle，Gralde也是现在项目构建的主流工具。看到项目中杂乱gradle配置，你是否手足无措，莫慌，本文将带你了解Android中Gradle插件。</p>
+<span id="more"></span>
 <h2 id="1-什么是Gradle的Android插件"><a href="#1-什么是Gradle的Android插件" class="headerlink" title="1.什么是Gradle的Android插件"></a>1.什么是Gradle的Android插件</h2><p>Gradle有很多插件，为了支持Android项目的构建，谷歌为Gradle编写了Android插件，新的Android构建系统就是由Gradle的Android插件组成的，Gradle是一个高级构建工具包，它管理依赖项并允许开发者自定义构建逻辑。Android Studio使用Gradle wrapper来集成Gradle的Android插件。需要注意的是，Gradle的Android插件也可以独立于AndroidStudio运行。</p>
 <p>在 Android的官方网站提到了新的Android构建系统主要有以下几个特点：</p>
 <ul>
