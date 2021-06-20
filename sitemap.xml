@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://kt-learn.cn/2021/06/20/Android-gradle-start-1/</loc>
+    
+    <lastmod>2021-06-20</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://kt-learn.cn/2021/06/03/Android-gradle-customPlugin/</loc>
     
-    <lastmod>2021-06-03</lastmod>
+    <lastmod>2021-06-20</lastmod>
     
   </url>
   
@@ -46,7 +53,7 @@
 
   <url>
     <loc>https://kt-learn.cn/</loc>
-    <lastmod>2021-06-03</lastmod>
+    <lastmod>2021-06-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -54,63 +61,63 @@
   
   <url>
     <loc>https://kt-learn.cn/tags/gradle/</loc>
-    <lastmod>2021-06-03</lastmod>
+    <lastmod>2021-06-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://kt-learn.cn/tags/Android/</loc>
-    <lastmod>2021-06-03</lastmod>
+    <lastmod>2021-06-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://kt-learn.cn/tags/groovy/</loc>
-    <lastmod>2021-06-03</lastmod>
+    <lastmod>2021-06-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://kt-learn.cn/tags/java/</loc>
-    <lastmod>2021-06-03</lastmod>
+    <lastmod>2021-06-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://kt-learn.cn/tags/JVM/</loc>
-    <lastmod>2021-06-03</lastmod>
+    <lastmod>2021-06-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://kt-learn.cn/tags/%E5%AD%97%E8%8A%82%E7%A0%81/</loc>
-    <lastmod>2021-06-03</lastmod>
+    <lastmod>2021-06-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://kt-learn.cn/tags/Hexo/</loc>
-    <lastmod>2021-06-03</lastmod>
+    <lastmod>2021-06-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://kt-learn.cn/tags/github/</loc>
-    <lastmod>2021-06-03</lastmod>
+    <lastmod>2021-06-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://kt-learn.cn/tags/mac/</loc>
-    <lastmod>2021-06-03</lastmod>
+    <lastmod>2021-06-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -119,35 +126,35 @@
   
   <url>
     <loc>https://kt-learn.cn/categories/Android/</loc>
-    <lastmod>2021-06-03</lastmod>
+    <lastmod>2021-06-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://kt-learn.cn/categories/Java%E8%99%9A%E6%8B%9F%E6%9C%BA/</loc>
-    <lastmod>2021-06-03</lastmod>
+    <lastmod>2021-06-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://kt-learn.cn/categories/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</loc>
-    <lastmod>2021-06-03</lastmod>
+    <lastmod>2021-06-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://kt-learn.cn/categories/Android/gradle/</loc>
-    <lastmod>2021-06-03</lastmod>
+    <lastmod>2021-06-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://kt-learn.cn/categories/Java%E8%99%9A%E6%8B%9F%E6%9C%BA/%E5%AD%97%E8%8A%82%E7%A0%81/</loc>
-    <lastmod>2021-06-03</lastmod>
+    <lastmod>2021-06-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>

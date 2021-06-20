@@ -138,29 +138,22 @@
 
 
 
-<meta name="description" content="gradle是一种构建工具，用来控制代码的编译、构建、打包等过程，自定义Gradle在Android中应用是很广泛的，比如在gradle构建过程中使用字节码技术、默认的Android项目中应用了很多插件，比如java、groovy、com.android.application等，了解Gradle插件有助于更好的理解生成APK的过程。 自定义插件三种方式：  build script：在build">
+<meta name="description" content="新建一个Android项目，默认使用Gradle进行构建，相信大家或多或少都听过Gradle，Gralde也是现在项目构建的主流工具。看到项目中杂乱gradle配置，你是否手足无措，莫慌，本文将带你了解Android中Gradle插件。 1.什么是Gradle的Android插件Gradle有很多插件，为了支持Android项目的构建，谷歌为Gradle编写了Android插件，新的Android">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Gradle自定义插件的三种方式">
-<meta property="og:url" content="https://kt-learn.cn/2021/06/03/Android-gradle-customPlugin/index.html">
+<meta property="og:title" content="Android Gradle（一）Gradle的Android插件入门">
+<meta property="og:url" content="https://kt-learn.cn/2021/06/20/Android-gradle-start-1/index.html">
 <meta property="og:site_name" content="cheng shihuan">
-<meta property="og:description" content="gradle是一种构建工具，用来控制代码的编译、构建、打包等过程，自定义Gradle在Android中应用是很广泛的，比如在gradle构建过程中使用字节码技术、默认的Android项目中应用了很多插件，比如java、groovy、com.android.application等，了解Gradle插件有助于更好的理解生成APK的过程。 自定义插件三种方式：  build script：在build">
+<meta property="og:description" content="新建一个Android项目，默认使用Gradle进行构建，相信大家或多或少都听过Gradle，Gralde也是现在项目构建的主流工具。看到项目中杂乱gradle配置，你是否手足无措，莫慌，本文将带你了解Android中Gradle插件。 1.什么是Gradle的Android插件Gradle有很多插件，为了支持Android项目的构建，谷歌为Gradle编写了Android插件，新的Android">
 <meta property="og:locale">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yishunjiande/PictureContainer@main/img/20210603224249.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yishunjiande/PictureContainer@main/img/20210603224355.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yishunjiande/PictureContainer@main/img/20210603224511.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yishunjiande/PictureContainer@main/img/20210603224914.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yishunjiande/PictureContainer@main/img/20210603225158.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yishunjiande/PictureContainer@main/img/20210603225411.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yishunjiande/PictureContainer@main/img/20210603225524.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yishunjiande/PictureContainer@main/img/20210603232446.png">
-<meta property="article:published_time" content="2021-06-03T14:29:02.000Z">
-<meta property="article:modified_time" content="2021-06-20T15:15:31.147Z">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yishunjiande/PictureContainer@main/img/20210620231811.png">
+<meta property="article:published_time" content="2021-06-20T15:15:21.000Z">
+<meta property="article:modified_time" content="2021-06-20T15:25:31.201Z">
 <meta property="article:author" content="Shi Huan">
 <meta property="article:tag" content="gradle">
 <meta property="article:tag" content="Android">
 <meta property="article:tag" content="groovy">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/yishunjiande/PictureContainer@main/img/20210603224249.png">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/yishunjiande/PictureContainer@main/img/20210620231811.png">
 
 
 
@@ -190,13 +183,13 @@
 
 
 
-  <link rel="canonical" href="https://kt-learn.cn/2021/06/03/Android-gradle-customPlugin/"/>
+  <link rel="canonical" href="https://kt-learn.cn/2021/06/20/Android-gradle-start-1/"/>
 
 
 
 
 
-  <title>Gradle自定义插件的三种方式 | cheng shihuan</title>
+  <title>Android Gradle（一）Gradle的Android插件入门 | cheng shihuan</title>
   
 
 
@@ -367,7 +360,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://kt-learn.cn/2021/06/03/Android-gradle-customPlugin/">
+    <link itemprop="mainEntityOfPage" href="https://kt-learn.cn/2021/06/20/Android-gradle-start-1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
@@ -384,7 +377,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">Gradle自定义插件的三种方式</h2>
+          <h2 class="post-title" itemprop="name headline">Android Gradle（一）Gradle的Android插件入门</h2>
         
 
         <div class="post-meta">
@@ -396,8 +389,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-06-03T22:29:02+08:00">
-                2021-06-03
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-06-20T23:15:21+08:00">
+                2021-06-20
               </time>
             
 
@@ -412,7 +405,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2021-06-20T23:15:31+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2021-06-20T23:25:31+08:00">
                 2021-06-20
               </time>
             
@@ -460,8 +453,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2021/06/03/Android-gradle-customPlugin/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2021/06/03/Android-gradle-customPlugin/" itemprop="commentCount"></span>
+                <a href="/2021/06/20/Android-gradle-start-1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2021/06/20/Android-gradle-start-1/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -483,7 +476,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.7k
+                  1.9k
                 </span>
               
 
@@ -499,7 +492,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  7
+                  8
                 </span>
               
             </div>
@@ -520,69 +513,65 @@
       
 
       
-        <p>gradle是一种构建工具，用来控制代码的编译、构建、打包等过程，自定义Gradle在Android中应用是很广泛的，比如在gradle构建过程中使用字节码技术、默认的Android项目中应用了很多插件，比如java、groovy、com.android.application等，了解Gradle插件有助于更好的理解生成APK的过程。</p>
-<p>自定义插件三种方式：</p>
+        <p>新建一个Android项目，默认使用Gradle进行构建，相信大家或多或少都听过Gradle，Gralde也是现在项目构建的主流工具。看到项目中杂乱gradle配置，你是否手足无措，莫慌，本文将带你了解Android中Gradle插件。</p>
+<h2 id="1-什么是Gradle的Android插件"><a href="#1-什么是Gradle的Android插件" class="headerlink" title="1.什么是Gradle的Android插件"></a>1.什么是Gradle的Android插件</h2><p>Gradle有很多插件，为了支持Android项目的构建，谷歌为Gradle编写了Android插件，新的Android构建系统就是由Gradle的Android插件组成的，Gradle是一个高级构建工具包，它管理依赖项并允许开发者自定义构建逻辑。Android Studio使用Gradle wrapper来集成Gradle的Android插件。需要注意的是，Gradle的Android插件也可以独立于AndroidStudio运行。</p>
+<p>在 Android的官方网站提到了新的Android构建系统主要有以下几个特点：</p>
 <ul>
-<li>build script：在<code>build.gradle</code>脚本中直接编写，只能在本文件内使用；</li>
-<li>buildSrc项目：新建一个名为<code>buildSrc</code>的Module，只能在本项目中使用；</li>
-<li>独立的项目：在独立的项目中编写插件，发布到本地或者远程maven仓库供其他项目使用。</li>
+<li>代码和资源易于重用</li>
+<li>无论是针对多个apk发行版还是针对不同风格的应用程序，都可以很容易创建应用程序的多个不同版本。</li>
+<li>易于配置、扩展和自定义构建过程</li>
+<li>良好的IDE集成</li>
 </ul>
-<span id="more"></span>
-<h2 id="1-基础知识"><a href="#1-基础知识" class="headerlink" title="1. 基础知识"></a>1. 基础知识</h2><p>本文基于Android进行讲解，实际上任何一个gradle project都可以，阅读本文你可以需要具备基本的gradle知识、groovy语法，可以参考我的两外两篇文章。<br><a href=""></a><br><a href=""></a><br>建议有gradle基础的和英文水平较高的直接阅读Gradle官方文档：<a target="_blank" rel="noopener" href="https://docs.gradle.org/current/userguide/custom_plugins.html">Gradle custom_plugins</a></p>
-<h2 id="2-方式一：build-script"><a href="#2-方式一：build-script" class="headerlink" title="2. 方式一：build script"></a>2. 方式一：build script</h2><p>直接在脚本文件中编写插件，线上项目一般不这样做。</p>
-<h3 id="2-1-创建Project编辑project下的buid-gradle文件"><a href="#2-1-创建Project编辑project下的buid-gradle文件" class="headerlink" title="2.1 创建Project编辑project下的buid.gradle文件"></a>2.1 创建Project编辑project下的buid.gradle文件</h3><p>创建一个project，直接在app module下的build.gradle脚本文件编写插件。<br>示例：<br><img src="https://cdn.jsdelivr.net/gh/yishunjiande/PictureContainer@main/img/20210603224249.png" alt="Build script1"><br>编辑build.gradle文件，新增插件GreetingPlugin，内容如下：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">class GreetingPlugin implements Plugin&lt;Project&gt; &#123;</span><br><span class="line">    void apply(Project project) &#123;</span><br><span class="line">        println &quot;GreetingPlugin&quot;</span><br><span class="line">        project.task(&#x27;hello&#x27;) &#123;</span><br><span class="line">            doLast &#123;</span><br><span class="line">                println &#x27;Hello from the GreetingPlugin&#x27;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//应用插件</span><br><span class="line">apply plugin: GreetingPlugin</span><br></pre></td></tr></table></figure>
-<p>不推荐这样做：</p>
+<p>Gradle的Android插件结合Android Studio成为了目前最为流行的Android构建系统。</p>
+<h2 id="2-Android-Studio的模块类型"><a href="#2-Android-Studio的模块类型" class="headerlink" title="2.Android Studio的模块类型"></a>2.Android Studio的模块类型</h2><p>Android Studio中的每个项目包含一个或多个含有源代码文件和资源文件的模块，这些模块可以独立构建、测试或调试，一个Android Studio的模块类型可以有以下几种：</p>
+<h3 id="2-1-Android应用程序模块"><a href="#2-1-Android应用程序模块" class="headerlink" title="2.1 Android应用程序模块"></a>2.1 Android应用程序模块</h3><p>Android应用程序模块可能依赖于库模块，尽管许多Android应用程序只包含一个应用程序模块，构建系统会将其生成一个APK。<br>模块的build.gradle包含：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apply plugin: &#x27;com.android.application&#x27;</span><br></pre></td></tr></table></figure>
+<h3 id="2-2-Android-库模块"><a href="#2-2-Android-库模块" class="headerlink" title="2.2 Android 库模块"></a>2.2 Android 库模块</h3><p>Android库模块包含可重用的特定于Android的代码和资源，构建系统会将其生成一个AAR。<br>模块的build.gradle包含：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apply plugin: &#x27;com.android.library&#x27;</span><br></pre></td></tr></table></figure>
+<h3 id="2-3-Java库模块"><a href="#2-3-Java库模块" class="headerlink" title="2.3 Java库模块"></a>2.3 Java库模块</h3><p>包含可重用的代码，构建系统会将其生成一个JAR包。<br>模块的build.gradle包含：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apply plugin: &#x27;com.android.library&#x27;</span><br></pre></td></tr></table></figure>
+<h2 id="3-一个Android项目视图"><a href="#3-一个Android项目视图" class="headerlink" title="3. 一个Android项目视图"></a>3. 一个Android项目视图</h2><p><img src="https://cdn.jsdelivr.net/gh/yishunjiande/PictureContainer@main/img/20210620231811.png" alt="Android项目视图"><br>所有构建文件在Gradle Scripts层级下显示，大概介绍下这些文件的用处。</p>
 <ul>
-<li>维护成本高：造成build.gradle文件过于臃肿</li>
-<li>无法复用：plugin只能在app module中使用，不能给其他module和project使用。</li>
+<li>项目build.gradle：配置项目的整体属性，比如指定使用的代码仓库、依赖的Gradle插件版本等等。</li>
+<li>模块build.gradle：配置当前Module的编译参数。</li>
+<li>gradle-wrapper.properites：配置Gradle Wrapper。</li>
+<li>gradle.properties：配置Gradle的编译参数。具体配置见<a target="_blank" rel="noopener" href="https://docs.gradle.org/current/userguide/build_environment.html">Gradle官方文档</a></li>
+<li>settings.gradle：配置Gradle的多项目管理。</li>
+<li>local.properties：一般用来存放该Android项目的私有属性配置，比如Android项目的SDK路径。</li>
 </ul>
-<h3 id="2-2-build-gradle优化的方式"><a href="#2-2-build-gradle优化的方式" class="headerlink" title="2.2 build.gradle优化的方式"></a>2.2 build.gradle优化的方式</h3><p>通过<code>apply from: &#39;../script/xxx.gradle&#39;</code>应用<code>xxx.gradle</code>脚本中编写的插件。<br>创建<code>script/test.gralde</code>文件并添加以上脚本内容。如图：<br><img src="https://cdn.jsdelivr.net/gh/yishunjiande/PictureContainer@main/img/20210603224355.png" alt="Build script2"><br>在<code>app module</code>使用，添加<code>apply from: &#39;../script/test.gradle&#39;</code>即可应用<code>test.gralde</code>脚本。<br><img src="https://cdn.jsdelivr.net/gh/yishunjiande/PictureContainer@main/img/20210603224511.png" alt="Build script3"></p>
-<h2 id="3-方式二：buildSrc"><a href="#3-方式二：buildSrc" class="headerlink" title="3.方式二：buildSrc"></a>3.方式二：buildSrc</h2><p>一般用于本地调试使用</p>
-<h3 id="3-1-搭建buildSrc-module"><a href="#3-1-搭建buildSrc-module" class="headerlink" title="3.1 搭建buildSrc module"></a>3.1 搭建buildSrc module</h3><p>在工程中新建buildSrc目录，<strong>名称一定不能写错</strong>，在buildSrc目录下建立如下目录和文件：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">src/</span><br><span class="line">  main/</span><br><span class="line">    groovy/</span><br><span class="line">build.gradle</span><br></pre></td></tr></table></figure>
-<p>编辑build.gradle文件，添加如下内容:</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">plugins &#123;</span><br><span class="line">    id &#x27;groovy&#x27;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">dependencies &#123;</span><br><span class="line">    implementation gradleApi()</span><br><span class="line">    implementation localGroovy()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>项目结构如下：<br><img src="https://cdn.jsdelivr.net/gh/yishunjiande/PictureContainer@main/img/20210603224914.png" alt="buildSrc1"><br>点击<code>sync</code>或者<code>buid project</code><strong>（这一步必须）</strong>，会生成build目录，groovy目录也会变成源文件目录，之后就可以创建包和源代码。</p>
-<h3 id="3-2-写插件"><a href="#3-2-写插件" class="headerlink" title="3.2 写插件"></a>3.2 写插件</h3><p>在groovy目录下新建包（new-&gt;package）：com.learn.plugin。<br>新建MyPlugin.groovy文件，必须以.groovy为后缀。添加如下内容：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">package com.learn.plugin</span><br><span class="line">import org.gradle.api.Plugin</span><br><span class="line">import org.gradle.api.Project</span><br><span class="line"></span><br><span class="line">class MyPlugin implements Plugin&lt;Project&gt; &#123;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    void apply(Project project) &#123;</span><br><span class="line">        println(&quot;Hello gradle plugin&quot;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>到这里插件已经写好了，在其他地方使用即可。</p>
-<h3 id="3-3-其他module中使用buildSrc中的插件"><a href="#3-3-其他module中使用buildSrc中的插件" class="headerlink" title="3.3 其他module中使用buildSrc中的插件"></a>3.3 其他module中使用buildSrc中的插件</h3><p>在app module下的build.gradle中应用插件：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apply plugin: com.learn.plugin.MyPlugin</span><br></pre></td></tr></table></figure>
-<p>在终端输入如下命令验证:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./gradlew assemble</span><br></pre></td></tr></table></figure>
+<p>接下来将简单介绍它们，先讲简单的，重点讲项目build.gradle和模块build.gradle。</p>
+<h3 id="3-1-local-properties"><a href="#3-1-local-properties" class="headerlink" title="3.1 local.properties"></a>3.1 local.properties</h3><p>通常用于SDK路径、NDK路径等Android项目的私有属性配置，比如：<code>local.properties</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ndk.dir=/Users/username/Downloads/android-ndk-r19c</span><br><span class="line">sdk.dir=/Users/username/Downloads/sdk</span><br></pre></td></tr></table></figure>
+<h3 id="3-2-settings-gradle"><a href="#3-2-settings-gradle" class="headerlink" title="3.2 settings.gradle"></a>3.2 settings.gradle</h3><p>配置Gradle的多项目管理，一个项目中所有的module都include在这里。比如：<code>settings.gradle</code></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">include &#x27;:LibJavaLibrary&#x27;</span><br><span class="line">include &#x27;:LibAndroidLibrary&#x27;</span><br><span class="line">include &#x27;:app&#x27;</span><br><span class="line">rootProject.name = &quot;GradleTestDemo&quot;</span><br></pre></td></tr></table></figure>
 
-<p>或者直接Run也可以。<br>输出如下内容表示成功：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; Configure project :app</span><br><span class="line">Hello gradle plugin</span><br></pre></td></tr></table></figure>
-<h3 id="3-4-总结"><a href="#3-4-总结" class="headerlink" title="3.4 总结"></a>3.4 总结</h3><ul>
-<li>module名称必须是buildSrc</li>
-<li>一般本地调试使用，项目中使用都是远程jar包形式，即第三种方式</li>
+<h3 id="3-3-gradle-properties"><a href="#3-3-gradle-properties" class="headerlink" title="3.3 gradle.properties"></a>3.3 gradle.properties</h3><p>配置Gradle的编译参数。具体配置见<a target="_blank" rel="noopener" href="https://docs.gradle.org/current/userguide/build_environment.html">Gradle官方文档</a><br>比如：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> Specifies the JVM arguments used <span class="keyword">for</span> the daemon process.</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 设置gradle守护进程的JVM参数，内存和编码格式</span></span><br><span class="line">org.gradle.jvmargs=-Xmx2048m -Dfile.encoding=UTF-8</span><br><span class="line"><span class="meta">#</span><span class="bash"> AndroidX package structure to make it clearer <span class="built_in">which</span> packages are bundled with the</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> Android operating system, and <span class="built_in">which</span> are packaged with your app<span class="string">&quot;s APK</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="string"> https://developer.android.com/topic/libraries/support-library/androidx-rn</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="string"> 是否使用AndroidX</span></span></span><br><span class="line">android.useAndroidX=true</span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="string"> Automatically convert third-party</span></span> </span><br><span class="line">libraries to use AndroidX</span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="string"> 三方库是否使用AndroidX</span></span></span><br><span class="line">android.enableJetifier=true</span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="string"> Kotlin code style for this project: &quot;</span>official<span class="string">&quot; or &quot;</span>obsolete<span class="string">&quot;</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="string"> 设置kotlin代码样式为“official”</span></span></span><br><span class="line">kotlin.code.style=official</span><br></pre></td></tr></table></figure>
+<h3 id="3-4-gradle-properties"><a href="#3-4-gradle-properties" class="headerlink" title="3.4 gradle.properties"></a>3.4 gradle.properties</h3><p>配置Gradle Wrapper，主要是为了标准化项目。只要项目配置了gradle wrapper，就可以指定gradle版本等信息。关于Gradle Wrapper可以看这篇文章：<br><a target="_blank" rel="noopener" href="http://liuwangshu.cn/application/gradle/4-wrapper.html">Gradle核心思想（四）看似无用，实则重要的Gradle Wrapper</a><br>比如：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> Sat Jun 19 21:24:56 CST 2021</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> Gradle解包后存储的主目录</span></span><br><span class="line">distributionBase=GRADLE_USER_HOME</span><br><span class="line"><span class="meta">#</span><span class="bash"> distributionBase指定目录的子目录。distributionBase+distributionPath就是Gradle解包后的存放位置</span></span><br><span class="line">distributionPath=wrapper/dists</span><br><span class="line"><span class="meta">#</span><span class="bash"> Gradle压缩包存储主目录</span></span><br><span class="line">zipStoreBase=GRADLE_USER_HOME</span><br><span class="line"><span class="meta">#</span><span class="bash"> zipStoreBase指定目录的子目录。zipStoreBase+zipStorePath就是Gradle压缩包的存放位置。</span></span><br><span class="line">zipStorePath=wrapper/dists</span><br><span class="line"><span class="meta">#</span><span class="bash"> gradle下载的url地址，如果不能翻墙可以使用国内镜像，或者将gradle放在自己的服务器上</span></span><br><span class="line">distributionUrl=https\://services.gradle.org/distributions/gradle-6.5-bin.zip</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-5-项目build-gradle"><a href="#3-5-项目build-gradle" class="headerlink" title="3.5 项目build.gradle"></a>3.5 项目build.gradle</h3><p>项目build.gradle指的是根目录下的build.gradle文件。它的作用主要有以下几点：</p>
+<ul>
+<li><p>统一管理项目的版本号，比如库的版本号、SDK版本号等</p>
+</li>
+<li><p>配置classpath的仓库地址，classpth一般是build.gradle脚本需要使用的资源，比如Gradle插件，必须添加如下配置：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">classpath &quot;com.android.tools.build:gradle:4.1.3&quot;</span><br></pre></td></tr></table></figure></li>
+<li><p>配置module中依赖的仓库地址，通过allprojects的repositories {}配置</p>
+</li>
 </ul>
-<h2 id="4-方式三：独立项目"><a href="#4-方式三：独立项目" class="headerlink" title="4.方式三：独立项目"></a>4.方式三：独立项目</h2><p>这种方式是项目中常用的，最后生成的是jar包，可以发布在本地或者远程仓库（jcenter、maven），方便其他项目使用。</p>
-<h3 id="4-1-新建写插件的module"><a href="#4-1-新建写插件的module" class="headerlink" title="4.1 新建写插件的module"></a>4.1 新建写插件的module</h3><p>新建一个module（新建一个工程也可以，因为最后生成和使用都是jar包的形式），module名称随意，只保留build.gradle文件和src/main目录，其余文件全部删掉。<br>修改build.gradle文件内容，如下：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">apply plugin: &#x27;groovy&#x27; //必须，groovy写插件必须</span><br><span class="line">apply plugin: &#x27;maven&#x27;  //要想发布到Maven，此插件必须使用</span><br><span class="line"></span><br><span class="line">dependencies &#123;</span><br><span class="line">    implementation gradleApi() //必须</span><br><span class="line">    implementation localGroovy() //必须</span><br><span class="line">&#125;</span><br><span class="line">repositories &#123;</span><br><span class="line">    mavenCentral() //必须</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">def group=&#x27;com.hh.cus_plugin&#x27; //组</span><br><span class="line">def artifactId=&#x27;myGradlePlugin&#x27; //唯一标示</span><br><span class="line">def version=&#x27;1.0.0&#x27; //版本</span><br><span class="line"></span><br><span class="line">def uploadRepo = new File(System.getProperty(&quot;user.home&quot;) + &quot;/.hhrepo&quot;)</span><br><span class="line">//将插件打包上传到本地maven仓库</span><br><span class="line">uploadArchives &#123;</span><br><span class="line">    repositories &#123;</span><br><span class="line">        mavenDeployer &#123;</span><br><span class="line">            pom.groupId = group</span><br><span class="line">            pom.artifactId = artifactId</span><br><span class="line">            pom.version = version</span><br><span class="line">            //指定本地maven的路径，在项目根目录下</span><br><span class="line">            repository(url: uri(uploadRepo))</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>相比buildSrc方案，增加了Maven的支持和uploadArchives这样一个Task，这个Task的作用是为了将插件打包上传到本地maven仓库。<br>这里使用的本地地址：<code>/Users/username(你电脑的名称)/.hhrepo</code></p>
-<h3 id="4-2-写插件"><a href="#4-2-写插件" class="headerlink" title="4.2 写插件"></a>4.2 写插件</h3><p>同方式二，这里直接给出结果：<br><img src="https://cdn.jsdelivr.net/gh/yishunjiande/PictureContainer@main/img/20210603225158.png" alt="AGP3"></p>
-<h3 id="4-3-发布"><a href="#4-3-发布" class="headerlink" title="4.3 发布"></a>4.3 发布</h3><p>在终端中执行<code>./gradlew uploadArchives</code>指令，或者展开Android Studio右侧的Gradle，找到对应<code>module-&gt;uploadArchivesTask</code>，就可以将插件部署到相应的目录下。<br><img src="https://cdn.jsdelivr.net/gh/yishunjiande/PictureContainer@main/img/20210603225411.png" alt="AGP3-2,-w337"><br>验证结果：<br><img src="https://cdn.jsdelivr.net/gh/yishunjiande/PictureContainer@main/img/20210603225524.png" alt="-w495"></p>
-<h3 id="4-4-其他项目使用"><a href="#4-4-其他项目使用" class="headerlink" title="4.4 其他项目使用"></a>4.4 其他项目使用</h3><p>修改project（根目录）下的build.gradle文件内容，如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">buildscript &#123;</span><br><span class="line">    ext.kotlin_version = &quot;1.4.32&quot;</span><br><span class="line">    repositories &#123;</span><br><span class="line">        google()</span><br><span class="line">        jcenter()</span><br><span class="line">        maven &#123;</span><br><span class="line">            url uri(System.getProperty(&quot;user.home&quot;) + &quot;/.hhrepo&quot;) //指定本地maven的路径</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    dependencies &#123;</span><br><span class="line">        classpath &quot;com.android.tools.build:gradle:4.1.0&quot;</span><br><span class="line">        classpath &quot;org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version&quot;</span><br><span class="line">        classpath &quot;com.hh.cus_plugin:myGradlePlugin:1.0.0&quot;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-<p>在app中使用，修改app下的build.gradle，添加如下内容：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apply plugin: com.ccc.plugin.PluginTest//插件类的全限定名</span><br></pre></td></tr></table></figure>
-<p>在终端输入如下命令验证:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./gradlew assemble</span><br></pre></td></tr></table></figure>
-<p>或者直接Run也可以，看到相关提示则成功。</p>
-<h3 id="4-5-总结"><a href="#4-5-总结" class="headerlink" title="4.5 总结"></a>4.5 总结</h3><ul>
-<li>项目中一般使用这种方式，方便项目插件化</li>
+<p>一个新建的Android项目，项目build.gradle内容如下：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">// Top-level build file where you can add configuration options common to all sub-projects/modules.</span><br><span class="line">// 顶级构建文件，您可以在其中添加所有子项目/模块通用的配置选项。</span><br><span class="line">buildscript &#123;</span><br><span class="line">    ext.kotlin_version = &quot;1.3.72&quot;</span><br><span class="line">    repositories &#123;</span><br><span class="line">        google()</span><br><span class="line">        jcenter()</span><br><span class="line">    &#125;</span><br><span class="line">    dependencies &#123;</span><br><span class="line">        classpath &quot;com.android.tools.build:gradle:4.1.3&quot;</span><br><span class="line">        classpath &quot;org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version&quot;</span><br><span class="line"></span><br><span class="line">        // NOTE: Do not place your application dependencies here; they belong</span><br><span class="line">        // in the individual module build.gradle files</span><br><span class="line">        //注意：不要将您的应用程序依赖项放在这里；它们属于单个模块 build.gradle 文件</span><br><span class="line">        // 意思就是应用程序的dependencies应该在对应module下的build.gradle中配置</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//各module中依赖的仓库</span><br><span class="line">allprojects &#123;</span><br><span class="line">    repositories &#123;</span><br><span class="line">        google()</span><br><span class="line">        jcenter()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">task clean(type: Delete) &#123;</span><br><span class="line">    delete rootProject.buildDir</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>通常项目build.gradle文件还有如下配置：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">//统一管理库版本号、SDK版本号等，在module中的build.gradle中可以通过rootProject.compileSdkVersion使用</span><br><span class="line">ext &#123;</span><br><span class="line">    compileSdkVersion = 29</span><br><span class="line">    buildToolsVersion = &quot;28.0.3&quot;</span><br><span class="line">    minSdkVersion = 18</span><br><span class="line">    targetSdkVersion = 28</span><br><span class="line"></span><br><span class="line">    AppVersionCode = 595000</span><br><span class="line">    AppVersionName = &quot;5.95.0&quot;</span><br><span class="line">    LogicVersionCode = 595000</span><br><span class="line">    LogicVersionName = &quot;5.95.0&quot;</span><br><span class="line"></span><br><span class="line">    frescoVersion = &quot;1.9.0&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-6-模块build-gradle"><a href="#3-6-模块build-gradle" class="headerlink" title="3.6 模块build.gradle"></a>3.6 模块build.gradle</h3><p>一个新Android项目的app模块的build.gradle内容如下：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">plugins &#123;</span><br><span class="line">    //应用程序插件，表示当前module是应用程序模块，编译生成APK</span><br><span class="line">    id &#x27;com.android.application&#x27;</span><br><span class="line">    //kotlin插件</span><br><span class="line">    id &#x27;kotlin-android&#x27;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//用于描述该Module构建过程中所用到的所有参数</span><br><span class="line">android &#123;</span><br><span class="line">    compileSdkVersion rootProject.compileSdkVersion</span><br><span class="line">    buildToolsVersion rootProject.buildToolsVersion</span><br><span class="line"></span><br><span class="line">    defaultConfig &#123;</span><br><span class="line">        applicationId &quot;com.hh.gradletestdemo&quot;</span><br><span class="line">        minSdkVersion 17</span><br><span class="line">        targetSdkVersion 30</span><br><span class="line">        versionCode 1</span><br><span class="line">        versionName &quot;1.0&quot;</span><br><span class="line"></span><br><span class="line">        testInstrumentationRunner &quot;androidx.test.runner.AndroidJUnitRunner&quot;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    buildTypes &#123;</span><br><span class="line">        release &#123;</span><br><span class="line">            minifyEnabled false</span><br><span class="line">            proguardFiles getDefaultProguardFile(&#x27;proguard-android-optimize.txt&#x27;), &#x27;proguard-rules.pro&#x27;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    compileOptions &#123;</span><br><span class="line">        sourceCompatibility JavaVersion.VERSION_1_8</span><br><span class="line">        targetCompatibility JavaVersion.VERSION_1_8</span><br><span class="line">    &#125;</span><br><span class="line">    kotlinOptions &#123;</span><br><span class="line">        jvmTarget = &#x27;1.8&#x27;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">dependencies &#123;</span><br><span class="line"></span><br><span class="line">    implementation &quot;org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version&quot;</span><br><span class="line">    implementation &#x27;androidx.core:core-ktx:1.5.0&#x27;</span><br><span class="line">    implementation &#x27;androidx.appcompat:appcompat:1.3.0&#x27;</span><br><span class="line">    implementation &#x27;com.google.android.material:material:1.3.0&#x27;</span><br><span class="line">    implementation &#x27;androidx.constraintlayout:constraintlayout:2.0.4&#x27;</span><br><span class="line">    testImplementation &#x27;junit:junit:4.+&#x27;</span><br><span class="line">    androidTestImplementation &#x27;androidx.test.ext:junit:1.1.2&#x27;</span><br><span class="line">    androidTestImplementation &#x27;androidx.test.espresso:espresso-core:3.3.0&#x27;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>模块中比较重要的几项配置：<br><strong>1.Gradle的Android插件类型</strong><br>apply引入的插件id为com.android.application，说明当前模块是一个应用程序模块，Gradle的Android插件有多个类型分别为：</p>
+<ul>
+<li>应用程序插件，插件id为<code>com.android.application</code>，会生成一个APK。</li>
+<li>库插件，插件id为<code>com.android.library</code>，会生成一个AAR，提供给其他应用程序模块用。</li>
+<li>java插件，插件id为<code>java-library</code>，会生成Jar包，提供给其他应用程序模块用。</li>
 </ul>
-<h2 id="5-拓展"><a href="#5-拓展" class="headerlink" title="5. 拓展"></a>5. 拓展</h2><p>有人可能见过通过META-INF中properties配置插件，没错，这种配置是比较推荐的，对于提供独立自定义插件的JAR，强烈推荐这种做。<br>一般插件很少直接使用插件类的全限定名调用，比如：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//不推荐</span><br><span class="line">apply plugin:com.ccc.plugin.PluginTest</span><br></pre></td></tr></table></figure>
-<p>基本上都是通过插件名或者叫插件id调用，比如官方的java、groovy、com.android.application等，都是通过如下配置使用：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">//推荐</span><br><span class="line">apply plugin:&#x27;插件名&#x27;</span><br><span class="line">apply plugin:&#x27;groovy&#x27;</span><br><span class="line">apply plugin:&#x27;com.android.application&#x27;</span><br><span class="line">或者</span><br><span class="line">plugins&#123;</span><br><span class="line">    id &#x27;插件名&#x27;</span><br><span class="line">    id &#x27;java&#x27;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这样做的原因：可能是不想插件类暴露出来吧，可以自定义别名。（以后知道原因了再更新）</p>
-<p><strong>配置别名步骤：</strong><br>在main目录下新建<code>resources/META-INF/gradle-plugins</code>目录，名称不能随意填写。<br>在<code>gradle-plugins</code>下新建<code>name(插件名).properties</code>文件，这个name就是后面要使用的，如图：<br><img src="https://cdn.jsdelivr.net/gh/yishunjiande/PictureContainer@main/img/20210603232446.png"><br>其他module使用这个插件：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">apply plugin:&#x27;hhhhh&#x27;</span><br><span class="line">或者</span><br><span class="line">plugins&#123;</span><br><span class="line">    id &#x27;hhhhh&#x27;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>执行<code>./gradlew assemble</code>验证</p>
-<h2 id="6-总结"><a href="#6-总结" class="headerlink" title="6. 总结"></a>6. 总结</h2><p>开发gradle插件掌握方式三就行了，关键是项目里面有相关的内容能看懂就行了，比如字节码插桩、编译优化等都会涉及AGP的内容。再此安利：<a target="_blank" rel="noopener" href="https://docs.gradle.org/current/userguide/userguide.html">Gradle userguide</a></p>
 
       
     </div>
@@ -643,7 +632,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://kt-learn.cn/2021/06/03/Android-gradle-customPlugin/" title="Gradle自定义插件的三种方式">https://kt-learn.cn/2021/06/03/Android-gradle-customPlugin/</a>
+    <a href="https://kt-learn.cn/2021/06/20/Android-gradle-start-1/" title="Android Gradle（一）Gradle的Android插件入门">https://kt-learn.cn/2021/06/20/Android-gradle-start-1/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -675,8 +664,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/05/31/JVM-bytecode-analysis/" rel="next" title="详解Java字节码文件">
-                <i class="fa fa-chevron-left"></i> 详解Java字节码文件
+              <a href="/2021/06/03/Android-gradle-customPlugin/" rel="next" title="Gradle自定义插件的三种方式">
+                <i class="fa fa-chevron-left"></i> Gradle自定义插件的三种方式
               </a>
             
           </div>
@@ -684,10 +673,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2021/06/20/Android-gradle-start-1/" rel="prev" title="Android Gradle（一）Gradle的Android插件入门">
-                Android Gradle（一）Gradle的Android插件入门 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -842,7 +827,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="nav-text">1. 基础知识</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E6%96%B9%E5%BC%8F%E4%B8%80%EF%BC%9Abuild-script"><span class="nav-text">2. 方式一：build script</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-%E5%88%9B%E5%BB%BAProject%E7%BC%96%E8%BE%91project%E4%B8%8B%E7%9A%84buid-gradle%E6%96%87%E4%BB%B6"><span class="nav-text">2.1 创建Project编辑project下的buid.gradle文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-build-gradle%E4%BC%98%E5%8C%96%E7%9A%84%E6%96%B9%E5%BC%8F"><span class="nav-text">2.2 build.gradle优化的方式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E6%96%B9%E5%BC%8F%E4%BA%8C%EF%BC%9AbuildSrc"><span class="nav-text">3.方式二：buildSrc</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-%E6%90%AD%E5%BB%BAbuildSrc-module"><span class="nav-text">3.1 搭建buildSrc module</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-%E5%86%99%E6%8F%92%E4%BB%B6"><span class="nav-text">3.2 写插件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-%E5%85%B6%E4%BB%96module%E4%B8%AD%E4%BD%BF%E7%94%A8buildSrc%E4%B8%AD%E7%9A%84%E6%8F%92%E4%BB%B6"><span class="nav-text">3.3 其他module中使用buildSrc中的插件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4-%E6%80%BB%E7%BB%93"><span class="nav-text">3.4 总结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E6%96%B9%E5%BC%8F%E4%B8%89%EF%BC%9A%E7%8B%AC%E7%AB%8B%E9%A1%B9%E7%9B%AE"><span class="nav-text">4.方式三：独立项目</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-%E6%96%B0%E5%BB%BA%E5%86%99%E6%8F%92%E4%BB%B6%E7%9A%84module"><span class="nav-text">4.1 新建写插件的module</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-%E5%86%99%E6%8F%92%E4%BB%B6"><span class="nav-text">4.2 写插件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-%E5%8F%91%E5%B8%83"><span class="nav-text">4.3 发布</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-4-%E5%85%B6%E4%BB%96%E9%A1%B9%E7%9B%AE%E4%BD%BF%E7%94%A8"><span class="nav-text">4.4 其他项目使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-5-%E6%80%BB%E7%BB%93"><span class="nav-text">4.5 总结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E6%8B%93%E5%B1%95"><span class="nav-text">5. 拓展</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-%E6%80%BB%E7%BB%93"><span class="nav-text">6. 总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E4%BB%80%E4%B9%88%E6%98%AFGradle%E7%9A%84Android%E6%8F%92%E4%BB%B6"><span class="nav-text">1.什么是Gradle的Android插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Android-Studio%E7%9A%84%E6%A8%A1%E5%9D%97%E7%B1%BB%E5%9E%8B"><span class="nav-text">2.Android Studio的模块类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A8%A1%E5%9D%97"><span class="nav-text">2.1 Android应用程序模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-Android-%E5%BA%93%E6%A8%A1%E5%9D%97"><span class="nav-text">2.2 Android 库模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-Java%E5%BA%93%E6%A8%A1%E5%9D%97"><span class="nav-text">2.3 Java库模块</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E4%B8%80%E4%B8%AAAndroid%E9%A1%B9%E7%9B%AE%E8%A7%86%E5%9B%BE"><span class="nav-text">3. 一个Android项目视图</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-local-properties"><span class="nav-text">3.1 local.properties</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-settings-gradle"><span class="nav-text">3.2 settings.gradle</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-gradle-properties"><span class="nav-text">3.3 gradle.properties</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4-gradle-properties"><span class="nav-text">3.4 gradle.properties</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-5-%E9%A1%B9%E7%9B%AEbuild-gradle"><span class="nav-text">3.5 项目build.gradle</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-6-%E6%A8%A1%E5%9D%97build-gradle"><span class="nav-text">3.6 模块build.gradle</span></a></li></ol></li></ol></div>
             
 
           </div>
