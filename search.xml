@@ -98,7 +98,9 @@
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">apply plugin: &#x27;com.android.library&#x27;</span><br></pre></td></tr></table></figure>
 <h3 id="2-3-Java库模块"><a href="#2-3-Java库模块" class="headerlink" title="2.3 Java库模块"></a>2.3 Java库模块</h3><p>包含可重用的代码，构建系统会将其生成一个JAR包。<br>模块的build.gradle包含：</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">apply plugin: &#x27;com.android.library&#x27;</span><br></pre></td></tr></table></figure>
-<h2 id="3-一个Android项目视图"><a href="#3-一个Android项目视图" class="headerlink" title="3. 一个Android项目视图"></a>3. 一个Android项目视图</h2><p><img src="https://cdn.jsdelivr.net/gh/yishunjiande/PictureContainer@main/img/20210620231811.png" alt="Android项目视图"><br>所有构建文件在Gradle Scripts层级下显示，大概介绍下这些文件的用处。</p>
+<h2 id="3-一个Android项目视图"><a href="#3-一个Android项目视图" class="headerlink" title="3. 一个Android项目视图"></a>3. 一个Android项目视图</h2><img src="https://cdn.jsdelivr.net/gh/yishunjiande/PictureContainer@main/img/20210620231811.png" width="50%" height="50%">
+所有构建文件在Gradle Scripts层级下显示，大概介绍下这些文件的用处。
+
 <ul>
 <li>项目build.gradle：配置项目的整体属性，比如指定使用的代码仓库、依赖的Gradle插件版本等等。</li>
 <li>模块build.gradle：配置当前Module的编译参数。</li>
