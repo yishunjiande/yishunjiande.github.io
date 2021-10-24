@@ -316,18 +316,9 @@
       </tags>
   </entry>
   <entry>
-    <title></title>
+    <title>View.getVisiblity()出现NullPointerException的详细分析</title>
     <url>/2021/10/24/Android-View-getVisibility/</url>
-    <content><![CDATA[<h1 id="View-getVisiblity-出现NullPointerException的详细分析"><a href="#View-getVisiblity-出现NullPointerException的详细分析" class="headerlink" title="View.getVisiblity()出现NullPointerException的详细分析"></a>View.getVisiblity()出现NullPointerException的详细分析</h1><hr>
-<p>title: Android Gradle（一）Gradle的Android插件入门<br>date: 2021-10-24 22:52:14<br>tags: </p>
-<ul>
-<li>Android</li>
-<li>Crash</li>
-<li>View</li>
-</ul>
-<p>categories: [Android,Crash]</p>
-<hr>
-<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>在bugly上面收集到项目View.getVisiblity()的空指针异常，这个崩溃总量不大，但是一直存在，所以也没有特别花时间去关注，后面有一期需求，导致这个崩溃量上升，必须要解决了，本文将详细描述这个崩溃的排查过程和问题解决方法。</p>
+    <content><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>在bugly上面收集到项目View.getVisiblity()的空指针异常，这个崩溃总量不大，但是一直存在，所以也没有特别花时间去关注，后面有一期需求，导致这个崩溃量上升，必须要解决了，本文将详细描述这个崩溃的排查过程和问题解决方法。</p>
 <span id="more"></span>
 
 <h2 id="排查过程"><a href="#排查过程" class="headerlink" title="排查过程"></a>排查过程</h2><h3 id="bugly上报的具体堆栈信息"><a href="#bugly上报的具体堆栈信息" class="headerlink" title="bugly上报的具体堆栈信息"></a>bugly上报的具体堆栈信息</h3><p>bugly上具体的堆栈如下：</p>
@@ -384,5 +375,14 @@
 <li>当ViewGroup1继续遍历，获取index为N-1的view时，这时候获取的view就是空的，从而导致执行child.getVisibility()出现异常<br><img src="https://cdn.jsdelivr.net/gh/yishunjiande/PictureContainer@main/img/20211024223646.png"></li>
 </ul>
 <h2 id="问题解决方法"><a href="#问题解决方法" class="headerlink" title="问题解决方法"></a>问题解决方法</h2>]]></content>
+      <categories>
+        <category>Android</category>
+        <category>Crash</category>
+      </categories>
+      <tags>
+        <tag>Android</tag>
+        <tag>Crash</tag>
+        <tag>View</tag>
+      </tags>
   </entry>
 </search>

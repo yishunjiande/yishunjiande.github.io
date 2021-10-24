@@ -373,7 +373,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2021/10/24/Android-View-getVisibility/" itemprop="url">未命名</a></h2>
+                <a class="post-title-link" href="/2021/10/24/Android-View-getVisibility/" itemprop="url">View.getVisiblity()出现NullPointerException的详细分析</a></h2>
         
 
         <div class="post-meta">
@@ -401,12 +401,45 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2021-10-24T22:52:47+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2021-10-24T22:55:43+08:00">
                 2021-10-24
               </time>
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/Crash/" itemprop="url" rel="index">
+                    <span itemprop="name">Crash</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -439,7 +472,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2.2k
+                  2.1k
                 </span>
               
 
@@ -477,16 +510,7 @@
 
       
         
-          <h1 id="View-getVisiblity-出现NullPointerException的详细分析"><a href="#View-getVisiblity-出现NullPointerException的详细分析" class="headerlink" title="View.getVisiblity()出现NullPointerException的详细分析"></a>View.getVisiblity()出现NullPointerException的详细分析</h1><hr>
-<p>title: Android Gradle（一）Gradle的Android插件入门<br>date: 2021-10-24 22:52:14<br>tags: </p>
-<ul>
-<li>Android</li>
-<li>Crash</li>
-<li>View</li>
-</ul>
-<p>categories: [Android,Crash]</p>
-<hr>
-<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>在bugly上面收集到项目View.getVisiblity()的空指针异常，这个崩溃总量不大，但是一直存在，所以也没有特别花时间去关注，后面有一期需求，导致这个崩溃量上升，必须要解决了，本文将详细描述这个崩溃的排查过程和问题解决方法。</p>
+          <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>在bugly上面收集到项目View.getVisiblity()的空指针异常，这个崩溃总量不大，但是一直存在，所以也没有特别花时间去关注，后面有一期需求，导致这个崩溃量上升，必须要解决了，本文将详细描述这个崩溃的排查过程和问题解决方法。</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2021/10/24/Android-View-getVisibility/#more" rel="contents">
@@ -1456,7 +1480,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1467,7 +1491,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1541,7 +1565,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">8.3k</span>
+    <span title="Site words total count">8.2k</span>
   
 </div>
 
